@@ -12,7 +12,7 @@ String senha = request.getParameter("senha");
 	
 	//Redirecionamento
 	if(usuario.getIdUsuario() == 0){
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("../index.jsp?login=falha");
 	}else{
 		response.sendRedirect("../painel.jsp");
 	}
