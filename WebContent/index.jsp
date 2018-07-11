@@ -23,6 +23,16 @@
 	</head>
 	<body>
 	
+		<!-- Caso o usuário/senha estejam incorretos -->
+		<%
+		
+			//Verificar se na URL existe a variável login
+			if(request.getParameter("login") != null){
+				out.print("<script>alert('Falha ao realizar o login. Tente novamente.')");
+			}
+		
+		%>
+	
 		<form method="post" action="acoes/logar.jsp" class="formularioLogin" onsubmit="return validaLogin()">
 		
 			<div class="alert alert-danger" id="mensagem"></div>
