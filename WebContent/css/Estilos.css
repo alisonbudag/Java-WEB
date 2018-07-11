@@ -1,0 +1,11 @@
+.formularioLogin{
+	width: 400px;
+	margin : 20%  auto;
+}
+.formularioLogin input{
+	margin-bottom: 10px !important;
+}
+
+.formularioLogin div{
+	display: none;
+}
