@@ -1,3 +1,4 @@
+<%@page import="br.com.jsp.dao.UsuarioDao"%>
 <%
 
 	//Obter dados do usuário
@@ -6,10 +7,10 @@
 	String senha = request.getParameter("senha");
 	int nivel = Integer.parseInt(request.getParameter("nivel"));
 	
-	//Exibir dados do usuário
-	out.print(nome+"<br>");
-	out.print(email+"<br>");
-	out.print(senha+"<br>");
-	out.print(nivel);
-
+	//Executar o método de cadastro
+	new UsuarioDao().cadastrarUsuario(nome, email, senha, nivel);
+	
+	//Redirecionar para a página painel.jsp
+	response.sendRedirect("../painel.jsp");
+	
 %>
