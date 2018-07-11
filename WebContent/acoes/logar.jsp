@@ -14,6 +14,7 @@ String senha = request.getParameter("senha");
 	if(usuario.getIdUsuario() == 0){
 		response.sendRedirect("../index.jsp?login=falha");
 	}else{
+		session.setAttribute("usuario", usuario);
 		response.sendRedirect("../painel.jsp");
 	}
 

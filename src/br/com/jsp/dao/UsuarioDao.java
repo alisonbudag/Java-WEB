@@ -58,4 +58,31 @@ public class UsuarioDao {
 		return obj;
 		
 	}
+	
+	//Método para realizar o cadastra de usuário
+	public void cadastrarUsuario(String nome, String email, String senha, int nivel){
+		
+		//Tentar realizar o cadastro
+		try{
+			//SQL
+			String sql = "insert into usuarios(nomeUsuario, emailUsuario, senhaUsuario, nivelUsuario) values (?,?,?,?)";
+			
+			//Preparar a conexão
+			PreparedStatement ps = this.conexao.prepareStatement(sql);
+			
+			//Parâmetros
+			ps.setString(1, nome);
+			ps.setString(2, email);
+			ps.setString(3, senha);
+			ps.setInt(4, nivel);
+			
+			//Executar o comando
+			ps.execute();
+			
+		}catch(Exception e){
+			System.out.println("Falha ao cadastrar o usuário.");
+		}
+		
+	}
+	
 }
